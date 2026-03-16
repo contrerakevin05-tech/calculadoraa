@@ -9,17 +9,26 @@ const server = createServer((req, res) => {
 
   const partes = req.url.split('/'); // ejemplo: /sumar/5/9
 
-  const n1 = parseFloat(partes[2]);
-  const n2 = parseFloat(partes[3]);
+  if (partes[1] === "sumar") {
 
-  const resultado = n1 + n2;
+    const n1 = parseFloat(partes[2]);
+    const n2 = parseFloat(partes[3]);
 
-  res.writeHead(200, headers);
-  res.end(JSON.stringify({ resultado }));
+    const resultado = n1 + n2;
+
+    res.writeHead(200, headers);
+    res.end(JSON.stringify({ resultado }));
+
+  } else {
+
+    res.writeHead(404, headers);
+    res.end(JSON.stringify({ error: "Endpoint no encontrado" }));
+
+  }
 
 });
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 server.listen(PORT, () => {
  console.log(`Microservicio SUMA path Params en puerto ${PORT}`);
