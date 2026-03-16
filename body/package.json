@@ -1,9 +1,9 @@
 {
-  "name": "microservicio-suma-path",
+  "name": "microservicio-suma-body",
   "version": "1.0.0",
   "type": "module",
-  "main": "suma-path.js",
+  "main": "suma-body.js",
   "scripts": {
-    "start": "node suma-path.js"
+    "start": "node suma-body.js"
   }
 }
