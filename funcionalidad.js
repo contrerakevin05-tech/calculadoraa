@@ -5,7 +5,7 @@ function sumaPath() {
   const n1 = document.getElementById('numA').value;
   const n2 = document.getElementById('numB').value;
 
-  fetch(`http://127.0.0.1:3001/sumar/${n1}/${n2}`)
+  fetch(`https://calculadoraa-production.up.railway.app/sumar/${n1}/${n2}`)
     .then(res => res.json())
     .then(data => {
       display.innerText = "Resultado: " + data.resultado;
@@ -21,7 +21,7 @@ function sumaQuery() {
   const n1 = document.getElementById('numA').value;
   const n2 = document.getElementById('numB').value;
 
-  fetch(`http://127.0.0.1:3002/sumar?a=${n1}&b=${n2}`)
+  fetch(`https://calculadoraa.onrender.com/sumar?a=${n1}&b=${n2}`)
     .then(res => res.json())
     .then(data => {
       display.innerText = "Resultado: " + data.resultado;
