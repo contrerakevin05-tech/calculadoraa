@@ -1,0 +1,9 @@
+{
+  "name": "microservicio-suma-path",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "suma-path.js",
+  "scripts": {
+    "start": "node suma-path.js"
+  }
+}
