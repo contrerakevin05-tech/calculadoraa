@@ -19,6 +19,8 @@ const server = createServer((req, res) => {
 
 });
 
-server.listen(3001, () => {
-  console.log("Microservicio SUMA Path Params en puerto 3001");
+const PORT = process.env.PORT || 3001;
+
+server.listen(PORT, () => {
+ console.log(`Microservicio SUMA path Params en puerto ${PORT}`);
 });
