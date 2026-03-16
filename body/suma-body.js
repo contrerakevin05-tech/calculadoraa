@@ -9,7 +9,6 @@ const server = createServer((req, res) => {
     'Content-Type': 'application/json'
   };
 
-  // manejar preflight de CORS
   if (req.method === "OPTIONS") {
     res.writeHead(200, headers);
     res.end();
@@ -38,10 +37,17 @@ const server = createServer((req, res) => {
 
     });
 
+  } else {
+
+    res.writeHead(404, headers);
+    res.end(JSON.stringify({ error: "Endpoint no encontrado" }));
+
   }
 
 });
 
-server.listen(3003, () => {
-  console.log("Microservicio SUMA Body Params en puerto 3003");
+const PORT = process.env.PORT || 3003;
+
+server.listen(PORT, () => {
+  console.log(`Microservicio SUMA Body Params en puerto ${PORT}`);
 });
